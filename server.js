@@ -3,6 +3,7 @@ const net = require('net');
 // Create a server object
 const args = process.argv.slice(2); // This slices off the first two elements
 const serverName = args[0]; 
+const PORT = args[1] ;  
 const server = net.createServer((socket) => {
   console.log('New connection established');
 
@@ -26,6 +27,6 @@ const server = net.createServer((socket) => {
   });
 });
 
-server.listen(1236, () => {
-  console.log(`Server ${serverName} listening on port 1236`);
+server.listen(PORT, () => {
+  console.log(`Server ${serverName} listening on port ${PORT}`);
 });
